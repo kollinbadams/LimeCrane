@@ -24,8 +24,9 @@ function getMediaSourcesAvailable() {
         for (var i = 0; i < devices.length; i++) {
             var device = devices[i];
             if (device.kind === 'videoinput') {
-                var deviceID = device.deviceId.toString();
+                var deviceID = device.deviceId;
                 var label = device.label;
+                var deviceDetailsJSON = device.toJSON();
                 //var deviceData = "<tr><td>" + deviceID + "</td><td>" + label + "</td></tr>";
 
                 var tbodyRef = document.getElementById('mediaSourceTable').getElementsByTagName('tbody')[0];
@@ -43,6 +44,10 @@ function getMediaSourcesAvailable() {
                 var deviceLabelCell = newRow.insertCell();
                 var deviceLabelText = document.createTextNode(label);
                 deviceLabelCell.appendChild(deviceLabelText);
+
+                var deviceJSONCell = newRow.insertCell();
+                var deviceJSONCellText = document.createTextNode(deviceDetailsJSON);
+                deviceJSONCell.appendChild(deviceJSONCellText);
             }
         };
     });
