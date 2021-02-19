@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
     checkForUserMediaButton.addEventListener('click',
         function () {
         if (hasGetUserMedia()) {
-            alert("getUserMedia() is supported by your browser");
+            console.log("getMediaSeoucesAvailable()...Begin");
             getMediaSourcesAvailable();
+            console.log("getMediaSeoucesAvailable()...Complete");
             
         } else {
             alert("getUserMedia() is not supported by your browser");
@@ -46,7 +47,7 @@ function getMediaSourcesAvailable() {
                 deviceLabelCell.appendChild(deviceLabelText);
 
                 var deviceJSONCell = newRow.insertCell();
-                var deviceJSONCellText = document.createTextNode(deviceDetailsJSON);
+                var deviceJSONCellText = document.createTextNode(deviceDetailsJSON.toString());
                 deviceJSONCell.appendChild(deviceJSONCellText);
             }
         };
