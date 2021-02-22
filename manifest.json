@@ -1,12 +1,13 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "LimeCrane Plugin",
   "description": "This extension will adjust your webcams exposure automatically",
   "version": "1.1.8",
 
-  "browser_action": {
+  "action": {
    "default_icon": "website-logo-medium.png",
+   "default_title":"click me!",
    "default_popup": "popup.html"
   },
   "background": {
@@ -14,7 +15,8 @@
   },
   "permissions": [
    "activeTab",
-   "nativeMessaging"
+   "nativeMessaging",
+   "storage"
    ]
 
 }
